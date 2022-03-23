@@ -1,0 +1,10 @@
+<div id="przepisies">
+  <% @przepisies.each do |przepisy| %>
+    <%= render przepisy %>
+    <p>
+      <%= link_to "Pokaż ten przepis", przepisy, class:"btn btn-secondary" %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nowy przepis", new_przepisy_path, class:"btn btn-dark" %>
