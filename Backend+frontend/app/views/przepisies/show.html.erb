@@ -1,0 +1,11 @@
+<%= render @przepisy %>
+
+<div>
+  <%= link_to "Edytuj przepis", edit_przepisy_path(@przepisy), class:"btn btn-secondary" %> 
+  <%= link_to "Powrót do przepisów", przepisies_path, class:"btn btn-dark" %>
+</div>
+<br/>
+
+  <%= button_to "Usuń ten przepis", @przepisy, method: :delete, class:"btn btn-danger"%>
+
+

@@ -1,0 +1,42 @@
+<%= form_with(model: przepisy) do |form| %>
+  <% if przepisy.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(przepisy.errors.count, "error") %> prohibited this przepisy from being saved:</h2>
+
+      <ul>
+        <% przepisy.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.text_field :nazwa, class:"form-control",placeholder:"Nazwa"%>
+
+  </div>
+
+  <div class="mb-3">
+    <%= form.text_area :opis, class:"form-control", placeholder:"Opis"%>
+  </div>
+
+  <div class="mb-3">
+    <%= form.number_field :stopien_trudnosci, class:"form-control", placeholder:"Stopień trudnosci" %>
+  </div>
+
+   <div class="mb-3">
+    <%= form.text_field :czas_przygotowania, class:"form-control", placeholder:"Czas przygotowania" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.text_field :ocena_uzytkownikow, class:"form-control", placeholder:"Ocena użytkowników" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.text_field :kategoria, class:"form-control", placeholder:"Kategoria" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit class:"btn btn-secondary"%>
+  </div>
+<% end %>

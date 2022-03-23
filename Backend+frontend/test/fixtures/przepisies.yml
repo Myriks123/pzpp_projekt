@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nazwa: MyString
+  stopien_trudnosci: 1
+  czas_przygotowania: MyString
+  ocena_uzytkownikow: 1.5
+  kategoria: MyString
+
+two:
+  nazwa: MyString
+  stopien_trudnosci: 1
+  czas_przygotowania: MyString
+  ocena_uzytkownikow: 1.5
+  kategoria: MyString

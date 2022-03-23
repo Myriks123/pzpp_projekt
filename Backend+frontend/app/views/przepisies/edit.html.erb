@@ -1,0 +1,9 @@
+<h1>Edytuj przepis</h1>
+<br/>
+<%= render "form", przepisy: @przepisy %>
+
+
+<div>
+  <%= link_to "Pokaż ten przepis", @przepisy, class:"btn btn-dark" %>
+  <%= link_to "Powrót do przepisów", przepisies_path, class:"btn btn-secondary" %>
+</div>

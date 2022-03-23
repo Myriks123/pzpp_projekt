@@ -1,0 +1,2 @@
+class Przepisy < ApplicationRecord
+end
