@@ -18,25 +18,25 @@
   <% end %>
 
   <div class="field form-group">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Password" %>
+    <%= f.label :Hasło %> <i>(Zostaw puste, jeśli nie chesz zmienić)</i><br />
+    <%= f.password_field :Hasło, autocomplete: "new-password", class:"form-control", placeholder:"Hasło" %>
     <% if @minimum_password_length %>
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %> znaków minimum</em>
     <% end %>
   </div>
 <br>
   <div class="field form-group">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Password confirmation" %>
+    <%= f.label :Potwierdzenie_hasła %><br />
+    <%= f.password_field :Potwierdzenie_hasła, autocomplete: "new-password", class:"form-control", placeholder:"Potwierdzenie hasła" %>
   </div>
 <br>
   <div class="field form-group">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder:"Current password" %>
+    <%= f.label :Bieżące_hasło %> <i>(Potrzebujemy twojego obecnego hasła, aby potwierdzić zmiany)</i><br />
+    <%= f.password_field :Bieżące_hasło, autocomplete: "current-password", class:"form-control", placeholder:"Bieżące hasło" %>
   </div>
 <br>
   <div class="actions">
-    <%= f.submit "Update", class:"btn btn-secondary"  %>
+    <%= f.submit "Aktualizuj", class:"btn btn-secondary"  %>
   </div>
 <% end %>
   </div>
@@ -47,11 +47,11 @@
 
 <div class="card">
   <div class="card-header">
-    <h4>Cancel my account</h4>
+    <h4>Anuluj swoje konto</h4>
   </div>
   <div class="card-body">
-    <h5 class="card-title">Unhappy?</h5>
-    <p class="card-text"><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-danger" %></p>
+    <h5 class="card-title">Niezadowolony?</h5>
+    <p class="card-text"><%= button_to "Anuluj swoje konto", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-danger" %></p>
   </div>
 </div>
 
@@ -59,4 +59,4 @@
 
 
 
-<%= link_to "Back", :back %>
+<%= link_to "Powrót", :back %>

@@ -1,33 +1,33 @@
 
 <div class="card">
   <div class="card-header">
-    <h4>Sign up</h4>
+    <h4>Zarejestruj się</h4>
   </div>
   <div class="card-body">
    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field form-group">
-    <% f.label :email %>
+    <%= f.label :Email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
   </div>
 <br>
 
   <div class="field form-group">
-    <% f.label :password %>
+    <%= f.label :Hasło %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> znaków minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Password"  %>
+    <%= f.password_field :Hasło, autocomplete: "new-password", class:"form-control", placeholder:"Hasło"  %>
   </div>
-
+<br>
   <div class="field form-group">
-    <% f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Password confirmation"  %>
+    <%= f.label :Potwierdzenie_hasła %><br />
+    <%= f.password_field :Potwierdzenie_hasła, autocomplete: "new-password", class:"form-control", placeholder:"Potwierdzenie hasła"  %>
   </div>
 <br>
   <div class="actions">
-    <%= f.submit "Sign up", class:"btn btn-primary" %>
+    <%= f.submit "Zarejestruj się", class:"btn btn-primary" %>
   </div>
 <% end %>
   </div>
