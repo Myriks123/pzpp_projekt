@@ -17,6 +17,16 @@
   </div>
 
   <div class="mb-3">
+    <% if przepisy.image.attached? %>
+      <%= image_tag przepisy.image, style: "max-width: 400px; width: 100%; display: block;" %>
+    <% end %>
+
+    <% form.label :image %>
+    <%= form.file_field :image, class:"form-control" %>
+  </div>
+
+
+  <div class="mb-3">
     <%= form.text_area :opis, class:"form-control", placeholder:"Opis"%>
   </div>
 

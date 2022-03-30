@@ -65,6 +65,6 @@ class PrzepisiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def przepisy_params
-      params.require(:przepisy).permit(:nazwa, :opis, :stopien_trudnosci, :czas_przygotowania, :ocena_uzytkownikow, :kategoria)
+      params.require(:przepisy).permit(:nazwa, :image, :opis, :stopien_trudnosci, :czas_przygotowania, :ocena_uzytkownikow, :kategoria)
     end
 end
