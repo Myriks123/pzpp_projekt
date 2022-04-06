@@ -18,12 +18,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> znaków minimum)</em>
     <% end %><br />
-    <%= f.password_field :Hasło, autocomplete: "new-password", class:"form-control", placeholder:"Hasło"  %>
+    <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Hasło"  %>
   </div>
 <br>
   <div class="field form-group">
     <%= f.label :Potwierdzenie_hasła %><br />
-    <%= f.password_field :Potwierdzenie_hasła, autocomplete: "new-password", class:"form-control", placeholder:"Potwierdzenie hasła"  %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Potwierdzenie hasła"  %>
   </div>
 <br>
   <div class="actions">

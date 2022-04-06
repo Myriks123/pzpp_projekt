@@ -1,6 +1,7 @@
 class PrzepisiesController < ApplicationController
   before_action :set_przepisy, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /przepisies or /przepisies.json
   def index
     @przepisies = Przepisy.all
@@ -12,7 +13,8 @@ class PrzepisiesController < ApplicationController
 
   # GET /przepisies/new
   def new
-    @przepisy = Przepisy.new
+    #@przepisy = Przepisy.new
+    @przepisy = current_user.przepisies.build
   end
 
   # GET /przepisies/1/edit
@@ -21,7 +23,8 @@ class PrzepisiesController < ApplicationController
 
   # POST /przepisies or /przepisies.json
   def create
-    @przepisy = Przepisy.new(przepisy_params)
+    #@przepisy = Przepisy.new(przepisy_params)
+    @przepisy = current_user.przepisies.build(przepisy_params)
 
     respond_to do |format|
       if @przepisy.save
@@ -57,6 +60,11 @@ class PrzepisiesController < ApplicationController
     end
   end
 
+  def correct_user
+    @przepisy = current_user.przepisies.find_by(id: params[:id])
+    redirect_to przepisies_path, notice: "Nie masz uprawnień do edycji tego przepisu." if @przepisy.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_przepisy
@@ -65,6 +73,6 @@ class PrzepisiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def przepisy_params
-      params.require(:przepisy).permit(:nazwa, :image, :opis, :stopien_trudnosci, :czas_przygotowania, :ocena_uzytkownikow, :kategoria)
+      params.require(:przepisy).permit(:nazwa, :image, :opis, :stopien_trudnosci, :czas_przygotowania, :ocena_uzytkownikow, :kategoria, :user_id)
     end
 end
